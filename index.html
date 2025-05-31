@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" >
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UrbanKey Sistemas</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="estilos.css">
+</head>
+<body>
+  <header>
+    <div class="menu-flotante" id="menu-flotante">
+      <h1><i class="fas fa-key"></i> UrbanKey Software</h1>
+      <nav>
+        <ul>
+          <li><a href="#inicio" class="activo"><i class="fas fa-home"></i> Inicio</a></li>
+          <li><a href="#control-acceso"><i class="fas fa-door-open"></i> Control de Acceso</a></li>
+          <li><a href="#sistema-ventas"><i class="fas fa-cash-register"></i> Sistema de Ventas</a></li>
+          <li><a href="#contacto"><i class="fas fa-envelope"></i> Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Sección de Inicio -->
+    <section class="inicio" id="inicio">
+      <h2>Bienvenido a UrbanKey</h2>
+      <p>En UrbanKey desarrollamos soluciones tecnológicas modernas para el control de acceso y la gestión de ventas. Creamos sistemas seguros, eficientes y fáciles de usar para edificios, condominios y pequeños comercios.</p>
+
+      <h3>Nuestros Planes</h3>
+      <div class="planes">
+        <div class="plan">
+          <h4>Básico</h4>
+          <p>Para condominios o tiendas pequeñas. Funciones esenciales con bajo costo.</p>
+          <div class="precio">$1500 CLP / mes</div>
+        </div>
+        <div class="plan">
+          <h4>Profesional</h4>
+          <p>Ideal para empresas medianas. Incluye reportes y personalización básica.</p>
+          <div class="precio">$3500 CLP / mes</div>
+        </div>
+        <div class="plan">
+          <h4>Empresarial</h4>
+          <p>Solución completa con funciones avanzadas y soporte personalizado.</p>
+          <div class="precio">$6000 CLP / mes</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Control de Acceso -->
+    <section class="control-acceso" id="control-acceso">
+      <h2><i class="fas fa-door-open"></i> Sistema de Control de Acceso</h2>
+      <p>Administra la entrada y salida de personas en edificios, condominios o zonas restringidas con UrbanKey Access.</p>
+
+      <div class="contenido-acceso">
+        <div class="caracteristicas">
+          <div class="item">
+            <i class="fas fa-user-shield fa-2x"></i>
+            <h3>Seguridad</h3>
+            <p>Controla quién entra y sale con identificaciones seguras.</p>
+          </div>
+          <div class="item">
+            <i class="fas fa-clock fa-2x"></i>
+            <h3>Registro Horario</h3>
+            <p>Consulta historial de visitas y horarios en tiempo real.</p>
+          </div>
+          <div class="item">
+            <i class="fas fa-chart-line fa-2x"></i>
+            <h3>Reportes</h3>
+            <p>Genera informes detallados para análisis y seguimiento.</p>
+          </div>
+        </div>
+
+        <div class="imagen-acceso">
+          <img src="img/control-acceso.jpg" alt="Control de Acceso">
+        </div>
+
+        <div class="galeria-acceso">
+          <img src="img/acceso1.jpg" alt="Foto del sistema de acceso 1">
+          <img src="img/acceso2.jpg" alt="Foto del sistema de acceso 2">
+          <img src="img/acceso3.jpg" alt="Foto del sistema de acceso 3">
+        </div>
+      </div>
+    </section>
+
+    <!-- Sección de Sistema de Ventas -->
+    <section class="sistema-ventas" id="sistema-ventas">
+      <h2><i class="fas fa-cash-register"></i> Sistema de Ventas</h2>
+      <p>UrbanKey POS es un sistema diseñado especialmente para pequeños negocios y minimercados. Permite registrar ventas, administrar productos y generar reportes básicos con facilidad.</p>
+
+      <div class="contenido-ventas">
+        <div class="item">
+          <i class="fas fa-boxes fa-2x"></i>
+          <h3>Gestión de Productos</h3>
+          <p>Agrega, edita y organiza tus productos con categorías personalizadas.</p>
+        </div>
+        <div class="item">
+          <i class="fas fa-receipt fa-2x"></i>
+          <h3>Ventas Rápidas</h3>
+          <p>Procesa ventas de manera ágil con interfaz intuitiva y sencilla.</p>
+        </div>
+        <div class="item">
+          <i class="fas fa-file-invoice-dollar fa-2x"></i>
+          <h3>Reportes Básicos</h3>
+          <p>Consulta informes de ventas diarias, semanales y mensuales.</p>
+        </div>
+      </div>
+
+      <div class="galeria-ventas">
+        <img src="img/ventas1.jpg" alt="Pantalla ventas 1">
+        <img src="img/ventas2.jpg" alt="Pantalla ventas 2">
+        <img src="img/ventas3.jpg" alt="Pantalla ventas 3">
+      </div>
+    </section>
+
+   <!-- Sección de Contacto -->
+<section class="contacto" id="contacto">
+  <h2><i class="fas fa-envelope"></i> Contáctanos</h2>
+  <p>¿Tienes alguna duda o deseas más información? Escríbenos y te responderemos pronto.</p>
+  <form class="form-contacto" action="#" method="post" novalidate>
+    <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+    <input type="email" id="correo" name="correo" placeholder="Tu correo electrónico" required>
+    <input type="text" id="asunto" name="asunto" placeholder="Asunto" required>
+    <textarea id="mensaje" name="mensaje" rows="5" placeholder="Escribe tu mensaje aquí" required></textarea>
+    <button type="submit" class="btn">Enviar mensaje</button>
+  </form>
+
+  <div class="info-contacto">
+    <h3>Información de contacto</h3>
+    <p><i class="fas fa-envelope"></i> <a href="mailto:Urbankeysoftware@gmail.com">Urbankeysoftware@gmail.com</a></p>
+    <p><i class="fas fa-phone"></i> +56 9 2612 4095</p>
+    <p><i class="fas fa-map-marker-alt"></i> Santiago de Chile, Chile</p>
+  </div>
+</section>
+  </main>
+
+  <!-- Pie de página -->
+  <footer class="footer">
+    <p>&copy; 2025 UrbanKey Software. Todos los derechos reservados.</p>
+  </footer>
+
+  <script>
+    // Desplazamiento suave
+    document.querySelectorAll('a[href^="#"]').forEach(enlace => {
+      enlace.addEventListener('click', function(e) {
+        e.preventDefault();
+        const destino = document.querySelector(this.getAttribute('href'));
+        if (destino) {
+          destino.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+
+    // Resaltar sección activa
+    const secciones = document.querySelectorAll('section');
+    const enlacesMenu = document.querySelectorAll('.menu-flotante nav a');
+
+    window.addEventListener('scroll', () => {
+      let index = secciones.length;
+      while (--index >= 0 && window.scrollY + 80 < secciones[index].offsetTop) {}
+
+      enlacesMenu.forEach(enlace => enlace.classList.remove('activo'));
+
+      if (secciones[index]) {
+        const id = secciones[index].id;
+        const enlaceActivo = document.querySelector('.menu-flotante nav a[href="#${id}"]');
+        if (enlaceActivo) {
+          enlaceActivo.classList.add('activo');
+        }
+      }
+    });
+  </script>
+</body>
+</html>

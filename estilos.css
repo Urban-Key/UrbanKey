@@ -1,0 +1,706 @@
+/* === Variables === */
+:root {
+  --color-primario: #2c3e50;
+  --color-secundario: #f39c12;
+  --color-claro: #ffffff;
+  --color-gris-claro: #f4f4f4;
+  --color-gris-medio: #f0f0f0;
+  --color-texto: #333;
+  --color-texto-claro: #ecf0f1;
+  --color-fondo: #667eea;
+  --color-fondo-sec: #764ba2;
+}
+
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(135deg, #667eea, #764ba2);
+  color: #f5f5f5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Desplazamiento suave */
+html {
+  scroll-behavior: smooth;
+}
+
+/* === Menú Flotante === */
+.menu-flotante {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: rgba(44, 62, 80, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 30px;
+  z-index: 1000;
+  animation: slideDown 0.6s ease forwards;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.menu-flotante h1 {
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  user-select: none;
+}
+
+.menu-flotante h1 i {
+  margin-right: 12px;
+  color: var(--color-secundario);
+  animation: glow 2.5s infinite alternate;
+}
+
+@keyframes glow {
+  0% {
+    text-shadow: 0 0 6px var(--color-secundario), 0 0 10px var(--color-secundario);
+  }
+  100% {
+    text-shadow: 0 0 15px #f1c40f, 0 0 30px #f1c40f;
+  }
+}
+
+.menu-flotante nav ul {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+
+.menu-flotante nav ul li a {
+  color: var(--color-texto-claro);
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 1rem;
+}
+
+.menu-flotante nav ul li a:hover,
+.menu-flotante nav ul li a.activo {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+  box-shadow: 0 0 12px var(--color-secundario);
+  transform: scale(1.12);
+}
+
+.menu-flotante nav ul li a:focus {
+  outline: 2px dashed var(--color-secundario);
+  outline-offset: 3px;
+}
+
+.menu-flotante nav ul li a i {
+  font-size: 1.2rem;
+}
+
+/* === Contenido principal === */
+main {
+  margin-top: 90px;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+main h2 {
+  font-size: 2.5rem;
+  margin-bottom: 15px;
+  text-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+main p {
+  font-size: 1.25rem;
+  max-width: 600px;
+  margin: 0 auto;
+  color: #ddd;
+}
+
+/* === Sección Inicio === */
+.inicio {
+  text-align: center;
+  padding: 40px 20px;
+  background-color: var(--color-claro);
+  color: var(--color-primario);
+}
+
+.inicio h2 {
+  font-size: 2.2em;
+  color: var(--color-primario);
+  margin-bottom: 10px;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.7);
+}
+
+.inicio p {
+  font-size: 1.2em;
+  color: #34495e;
+  margin-bottom: 30px;
+}
+
+.inicio .botones {
+  margin-top: 20px;
+}
+
+.imagen-inicio img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* === Botones === */
+.btn {
+  background-color: var(--color-primario);
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  margin: 0 10px;
+  border-radius: 5px;
+  display: inline-block;
+  transition: background 0.3s, transform 0.2s ease;
+}
+
+.btn:hover {
+  background-color: #1a252f;
+  transform: scale(1.05);
+}
+
+/* === Sección Contacto === */
+.contacto {
+  padding: 40px 20px;
+  background-color: var(--color-gris-claro);
+  color: var(--color-primario);
+}
+
+.contacto h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.contacto form {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.contacto label {
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.contacto input,
+.contacto textarea {
+  margin-bottom: 15px;
+  padding: 10px;
+  border: 2px solid #ccc;
+  border-radius: 5px;
+  font-size: 1rem;
+  background-color: #fff;
+  color: var(--color-primario);
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contacto input::placeholder,
+.contacto textarea::placeholder {
+  color: #999;
+  font-style: italic;
+  opacity: 1;
+  transition: color 0.3s ease;
+}
+
+.contacto input:focus,
+.contacto textarea:focus {
+  border-color: var(--color-secundario);
+  box-shadow: 0 0 8px var(--color-secundario);
+  outline: none;
+}
+
+.contacto input:focus::placeholder,
+.contacto textarea:focus::placeholder {
+  color: var(--color-secundario);
+}
+
+/* Botón dentro del formulario */
+.contacto .btn {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+  font-weight: 700;
+  padding: 12px 0;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(243, 156, 18, 0.4);
+  border: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+}
+
+.contacto .btn:hover {
+  background-color: #d17f02;
+  box-shadow: 0 6px 16px rgba(209, 127, 2, 0.6);
+  transform: scale(1.05);
+}
+
+/* Contenedor para datos alternativos */
+.contacto .datos-alternativos {
+  max-width: 600px;
+  margin: 20px auto 0 auto;
+  padding: 15px;
+  background-color: var(--color-gris-medio);
+  border-radius: 8px;
+  color: var(--color-primario);
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.05);
+}
+
+.contacto .datos-alternativos.active {
+  display: block;
+}
+
+/* Botón para mostrar/ocultar datos */
+.contacto .toggle-datos-btn {
+  display: block;
+  margin: 15px auto 0 auto;
+  background-color: transparent;
+  color: var(--color-secundario);
+  border: 2px solid var(--color-secundario);
+  padding: 8px 16px;
+  border-radius: 25px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  max-width: 200px;
+  text-align: center;
+}
+
+.contacto .toggle-datos-btn:hover {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+}
+
+/* Íconos para datos alternativos */
+.contacto .datos-alternativos i {
+  margin-right: 10px;
+  color: var(--color-secundario);
+}
+
+/* === Sección Control de Acceso === */
+.control-acceso {
+  background-color: var(--color-claro);
+  color: var(--color-primario);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.control-acceso h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.7);
+}
+
+.control-acceso p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  color: #333333;
+}
+
+/* Características */
+.caracteristicas {
+  display: flex;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+.caracteristicas .item {
+  background-color: var(--color-gris-medio);
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 250px;
+  max-width: 300px;
+}
+
+.caracteristicas .item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(243, 156, 18, 0.5);
+}
+
+.caracteristicas .item i {
+  font-size: 3rem;
+  color: var(--color-secundario);
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+}
+
+.caracteristicas .item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--color-primario);
+  text-shadow: 0 0 4px rgba(255,255,255,0.6);
+}
+
+.caracteristicas .item p {
+  font-size: 1rem;
+  color: #444;
+}
+
+.contenido-acceso {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.imagen-acceso img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+/* === Secciones Generales === */
+.seccion {
+  padding: 60px 20px;
+  background-color: var(--color-claro);
+  border-top: 1px solid #ddd;
+}
+
+.seccion h2 {
+  text-align: center;
+  color: var(--color-primario);
+  margin-bottom: 30px;
+}
+
+.contenido-seccion {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 30px;
+}
+
+.contenido-seccion img {
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.descripcion {
+  max-width: 500px;
+}
+
+.descripcion p {
+  margin-bottom: 15px;
+  font-size: 1.1em;
+}
+
+.descripcion ul {
+  list-style: none;
+  padding: 0;
+}
+
+.descripcion li {
+  margin-bottom: 10px;
+  font-size: 1em;
+  color: var(--color-texto);
+}
+
+.descripcion li i {
+  color: #27ae60;
+  margin-right: 10px;
+}
+
+/* === Sección Sistema de Ventas === */
+.sistema-ventas {
+  background-color: var(--color-gris-claro);
+  color: var(--color-primario);
+  padding: 50px 20px;
+  text-align: center;
+}
+
+.sistema-ventas h2 {
+  font-size: 2.5rem;
+  margin-bottom: 30px;
+  text-shadow: 1px 1px 3px rgba(255,255,255,0.7);
+}
+
+.sistema-ventas p {
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: 0 auto 40px auto;
+  color: #333333;
+}
+
+.contenido-ventas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.sistema-ventas .item {
+  background-color: var(--color-gris-medio);
+  padding: 20px;
+  border-radius: 8px;
+  flex: 1 1 250px;
+  max-width: 300px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+  color: var(--color-primario);
+  text-align: center;
+}
+
+.sistema-ventas .item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(243, 156, 18, 0.5);
+}
+
+.sistema-ventas .item i {
+  font-size: 3rem;
+  color: var(--color-secundario);
+  margin-bottom: 15px;
+  filter: drop-shadow(0 0 3px rgba(0,0,0,0.3));
+}
+
+.sistema-ventas .item h3 {
+  font-size: 1.3rem;
+  margin-bottom: 10px;
+  color: var(--color-primario);
+  text-shadow: 0 0 4px rgba(255,255,255,0.6);
+}
+
+.sistema-ventas .item p {
+  font-size: 1rem;
+  color: #444;
+}
+
+/* === Galerías de imágenes === */
+.galeria-acceso,
+.galeria-ventas {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+}
+
+.galeria-acceso img,
+.galeria-ventas img {
+  width: 300px;
+  height: auto;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.galeria-acceso img:hover,
+.galeria-ventas img:hover {
+  transform: scale(1.05);
+}
+
+/* === Footer === */
+footer {
+  background-color: var(--color-primario);
+  color: var(--color-claro);
+  text-align: center;
+  padding: 20px;
+  font-size: 0.9rem;
+  user-select: none;
+}
+
+/* === Responsive === */
+@media (max-width: 768px) {
+  .menu-flotante {
+    flex-direction: column;
+    gap: 10px;
+    padding: 15px 20px;
+  }
+
+  .menu-flotante nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .caracteristicas {
+    flex-direction: column;
+  }
+
+  .contenido-acceso,
+  .contenido-seccion,
+  .contenido-ventas {
+    flex-direction: column;
+  }
+
+  .galeria-acceso img,
+  .galeria-ventas img {
+    width: 90%;
+  }
+
+  .contacto form,
+  .contacto .datos-alternativos {
+    width: 90%;
+  }
+}
+/* === Sección Planes === */
+.planes {
+  padding: 40px 20px;
+  background-color: var(--color-gris-claro);
+  text-align: center;
+}
+
+.planes h2 {
+  color: var(--color-primario);
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+}
+
+.planes .contenedor-planes {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.plan {
+  background-color: var(--color-claro);
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  padding: 30px 25px;
+  width: 300px;
+  color: var(--color-primario);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.plan:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.plan .titulo-plan {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 15px;
+}
+
+.plan .precio {
+  font-size: 2.5rem;
+  font-weight: 900;
+  color: var(--color-secundario);
+  margin-bottom: 25px;
+}
+
+.plan .caracteristicas-plan {
+  list-style: none;
+  padding: 0;
+  margin-bottom: 30px;
+  text-align: left;
+  width: 100%;
+}
+
+.plan .caracteristicas-plan li {
+  margin-bottom: 12px;
+  font-size: 1rem;
+  color: var(--color-texto);
+  position: relative;
+  padding-left: 25px;
+}
+
+.plan .caracteristicas-plan li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  color: var(--color-secundario);
+  font-weight: bold;
+}
+
+.plan .btn-contratar {
+  background-color: var(--color-secundario);
+  color: var(--color-primario);
+  font-weight: 700;
+  padding: 12px 25px;
+  border-radius: 6px;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  text-decoration: none;
+  display: inline-block;
+}
+
+.plan .btn-contratar:hover {
+  background-color: #d17f02;
+  transform: scale(1.05);
+}
+
+/* Responsive para planes */
+@media (max-width: 768px) {
+  .planes .contenedor-planes {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .plan {
+    max-width: 90%;
+  }
+}
+.planes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 30px;
+}
+
+.plan {
+  background-color: #f8f8f8;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 20px;
+  width: 280px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  transition: transform 0.3s ease;
+  text-align: center;
+}
+
+.plan:hover {
+  transform: translateY(-5px);
+}
+
+.plan h4 {
+  margin-top: 0;
+  font-size: 1.4em;
+  color: #333;
+}
+
+.plan .precio {
+  margin-top: 15px;
+  font-size: 1.2em;
+  font-weight: bold;
+  color: #007BFF;
+}
